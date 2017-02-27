@@ -5,7 +5,7 @@ require 'rails/jquery/form/validator/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'rails-jquery-form-validator'
-  spec.version       = Rails::jquery::Form::Validator::VERSION
+  spec.version       = Rails::Jquery::Form::Validator::VERSION
   spec.authors       = ['hmtanbir']
   spec.email         = ['tanbir2025@gmail.com']
 
