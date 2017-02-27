@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/rails-jqurey-form-validator.iml" filepath="$PROJECT_DIR$/.idea/rails-jqurey-form-validator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../rails-jquery-form-validator/.idea/rails-jqurey-form-validator.iml" filepath="$PROJECT_DIR$/../rails-jquery-form-validator/.idea/rails-jqurey-form-validator.iml" />
     </modules>
   </component>
 </project>

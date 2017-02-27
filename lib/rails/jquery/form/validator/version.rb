@@ -1,5 +1,5 @@
 module Rails
-  module Jqurey
+  module jquery
     module Form
       module Validator
         VERSION = '0.1.0'

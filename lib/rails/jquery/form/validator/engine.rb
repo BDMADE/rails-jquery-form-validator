@@ -1,5 +1,5 @@
 module Rails
-  module Jqurey
+  module jquery
     module Form
       module Validator
         module Rails
