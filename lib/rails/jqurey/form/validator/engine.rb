@@ -2,7 +2,10 @@ module Rails
   module Jqurey
     module Form
       module Validator
-        VERSION = '0.1.0'
+        module Rails
+          class Engine < ::Rails::Engine
+          end
+        end
       end
     end
   end

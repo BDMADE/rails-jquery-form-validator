@@ -1,41 +1,77 @@
-# Rails::Jqurey::Form::Validator
+# Rails::Jquery::Form::Validator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rails/jqurey/form/validator`. To experiment with that code, run `bin/console` for an interactive prompt.
+Jquery-form-validator-rails gem is based on Victor Jonsson's jQuery plugin: https://github.com/victorjonsson/jQuery-Form-Validator
 
-TODO: Delete this and the text above, and describe your gem
+jQuery Form Validator is a feature rich and multilingual jQuery plugin that makes it easy to validate user input while keeping your HTML markup clean from javascript code. Even though this plugin has a wide range of validation functions it's designed to require as little network traffic as possible. This is achieved by grouping together validation functions in "modules", making it possible to load only those functions that's needed to validate a particular form.
 
+Form demos and full documentation available at http://formvalidator.net/
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'rails-jqurey-form-validator'
-```
+    gem 'jquery-form-validator-rails'
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Add `jquery-form-validator-rails` to your Gemfile and run `bundle install`:
 
-    $ gem install rails-jqurey-form-validator
+    gem "jquery-form-validator-rails"
 
-## Usage
+### Include jquery.form-validator-rails javascript assets
 
-TODO: Write usage instructions here
+Add the following to your `app/assets/javascripts/application.js`:
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rails-jqurey-form-validator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+    //= require jquery.form-validator
 
 
-## License
+### Easy example
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+Example how to add Jquery Form Validator to FormHelper `text_field`:
 
+    <div class="controls">
+      <%= f.text_field(:example, class: "field", data: {
+          :validation => "required validate_max_length length50",
+          "validation-error-msg" => "This field is required and cannot be longer than 50 characters."
+        }) %>
+    </div>
+
+Then add following to your `app/assets/javascripts/application.js`
+
+    <script>
+      $(document).ready(function() {
+        $.validate();
+      });
+    </script>
+
+Other configuration options can be seen here: http://formvalidator.net/#configuration
+
+### Added modules:
+
+* security
+* date
+* location
+* file
+* sweden
+* uk
+
+The following code shows you how to load the module.
+
+    <script>
+      $.validate({
+        modules : 'security'
+      });
+    </script>
+
+Read the documentation for the modules at http://formvalidator.net
+
+## Contributing makes this repo happy!
+
+Please just hop in and help out! :smile:
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
